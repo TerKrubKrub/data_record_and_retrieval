@@ -21,7 +21,7 @@ void input(int i)
 
 int main()
 {
-	bool x = false;
+	int x = 0;
 	int n;
 	scanf("%d", &n);
 	for (int i = 0; i < n; i++)
@@ -32,12 +32,13 @@ int main()
 	scanf("%d", &m);
 	for (int i = 0; i < n; i++)
 	{
-		if (person[i].year == m)
+		x++;
+		if (person[i].year == m && x != 0)
 		{
 			printf("%s %s %s\n", person[i].id, person[i].name, person[i].surname);
-			x = true;
 		}
+		else x--;
 	}
-	if (x == false) printf("None");
+	if (x == 0) printf("None");
 	return 0;
 }
